@@ -1,0 +1,93 @@
+body{
+    margin: auto;
+}
+
+.homebar{
+    text-align: center;
+    background-color: black;
+    color: rgb(181, 176, 176);
+    padding: 30px 30px;
+    font-size: xx-large;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.navbar{
+    background-color: rgb(181, 176, 176);
+    padding: 20px 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 30px;
+}
+
+.home{
+    text-decoration: none;
+    color: black;
+}
+.Genre{
+    text-decoration: none;
+    color: black;
+}
+.Add-title{
+    text-decoration: none;
+    color: black;
+}
+
+.movies-grid{
+   display: grid;
+   grid-column: auto;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   justify-content: center;
+}
+
+.ullist{
+ list-style-type: none;
+}
+
+.title{
+font-size: x-large;
+text-align: center;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.image img{
+    width: 250px;
+    height: 250px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.genre{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+.watched{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.span{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+}
+.about{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.button{
+   background-color: rgb(181, 176, 176);
+   color: black;
+   border: none;
+   border-radius: 5px;
+   text-decoration: none;
+   margin-top: 20px;
+   padding: 6px;
+}
+
+.ullist .button{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
