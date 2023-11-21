@@ -1,5 +1,6 @@
 body{
     margin: auto;
+    background-color: rgb(211, 204, 204);
 }
 
 .homebar{
@@ -18,7 +19,7 @@ body{
     padding: 20px 20px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: larger;
     border-radius: 5px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -58,15 +59,20 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 250px;
     height: 250px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 .genre{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-style: italic;
+    /* font-style: italic; */
+    text-align: center;
 }
 .watched{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-style: italic;
+    /* font-style: italic; */
     margin-bottom: 10px;
+    text-align: center;
 }
 .span{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
