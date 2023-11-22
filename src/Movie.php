@@ -1,6 +1,6 @@
 <?php
 
-class Movies
+class Movie
 {
     public int $id;
     public string $title;
@@ -8,6 +8,7 @@ class Movies
     public string $watched;
     public string $image;
     public string $about;
+    public int $deleted;
 
     public function __construct(
         int $id, 
@@ -15,7 +16,8 @@ class Movies
         string $genre, 
         string $watched,  
         string $image, 
-        string $about
+        string $about,
+        int $deleted = 1
     ) {
         $this->id = $id;
         $this->title = $title;
@@ -23,6 +25,6 @@ class Movies
         $this->watched = $watched;
         $this->image = $image;
         $this->about = $about;
-        
+        $this->deleted = $deleted;
     }
 }

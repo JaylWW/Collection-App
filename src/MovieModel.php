@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/Movies.php';
+require_once 'src/Movie.php';
 
 class MovieModel
 {
@@ -16,14 +16,16 @@ class MovieModel
         $query = $this->db->prepare('SELECT `movies`. `title`, `genre`.`name` AS "genre",  `movies`.`id`,  `movies`.`watched`, `movies`.`image`, `movies`.`about`
                         FROM `movies`
                         INNER JOIN `genre`
-                        ON `movies`.`genre_id` = `genre`.`id` ');
+                        ON `movies`.`genre_id` = `genre`.`id`
+                        WHERE `movies`. `deleted` = 0 ');
+
         $query->execute();
-        $movies = $query->fetchAll();
+        $movies = $query->fetchAll(PDO::FETCH_ASSOC);
 
         $movieObjs = [];
 
         foreach($movies as $movie){
-            $movieObjs[] = new Movies(
+            $movieObjs[] = new Movie(
                 $movie['id'], 
                 $movie['title'], 
                 $movie['genre'],
@@ -36,4 +38,20 @@ class MovieModel
         return $movieObjs;
     }
 
+
+    public function addMovie(array $title, array $genre, array $watched, array $image, array $about);
+    {
+        $query = $this->db->prepare('INSERT INTO `movies`
+                (`title`, `genre_id`, `watched`, `image`, `about`)
+                VALUES (:title, :genre, :watched, :image, :about);');
+            
+            
+                $query->bindParam(':title', $title);
+                $query->bindParam(':genre', $genre);
+                $query->bindParam(':watched', $watched);
+                $query->bindParam(':image', $image);
+                $query->bindParam(':about', $about);
+            
+                $success = $query->execute();
+    }
 }

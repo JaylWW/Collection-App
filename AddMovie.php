@@ -2,7 +2,7 @@
 $db = new PDO('mysql:host=db; dbname=movies', 'root', 'password');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-
+require_once 'src/GenreViewHelper.php';
 
 $query = $db->prepare('SELECT `id`, `name` FROM `genre`');
 
@@ -31,19 +31,6 @@ $query = $db->prepare('SELECT `id`, `name` FROM `genre`');
             $iswatchedvalid = strtolower($watched) == 'yes'|| strtolower($watched) == 'no';
             $isaboutvalid = strlen($about) >= 10;
         
-            // Move these three if statements down into the form where you want 
-            // the messages to displays
-            // if (!$istitlevalid){
-            //     echo 'title must be at least 3 characters long';
-            // }
-        
-            // if (!$iswatchedvalid){
-            //     echo 'watched must be at least 2 characters long';
-            // }
-        
-            // if (!$isaboutvalid){
-            //     echo 'about must be at least 10 characters long';
-            // }
             if($istitlevalid && $iswatchedvalid && $isaboutvalid){
                 $query = $db->prepare('INSERT INTO `movies`
                 (`title`, `genre_id`, `watched`, `image`, `about`)
@@ -102,17 +89,12 @@ $query = $db->prepare('SELECT `id`, `name` FROM `genre`');
     ?>
     <input id="title" name="title" type="text" placeholder="Movie Title"/><br>
     
-
     <label for="genre">Genre:</label><br>
-    <select id="genre" name="genre" placeholder="genre">
     <br>
-
-    <?php 
-    foreach ($genres as $genre) {
-        echo "<option value='{$genre['id']}'>{$genre['name']}</option>";
-    }
+    <?php
+    echo GenreViewHelper::displayGenreDropDown($genres);
     ?>
-    </select><br>
+    <br>
     <label for="watched">Watched:</label><br>
     <?php
     if (!$iswatchedvalid){
@@ -120,8 +102,6 @@ $query = $db->prepare('SELECT `id`, `name` FROM `genre`');
     }
     ?>
     <input id="watched" name="watched" type="text" placeholder="Yes/No"/><br>
-
-   
 
     <label for="image">Image Link:</label><br>
     <input id="image" name="image" type="text" placeholder="url:"/><br>

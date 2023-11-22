@@ -21,32 +21,32 @@
 
 require_once 'src/MovieModel.php';
 require_once 'src/MovieViewHelper.php';
+require_once 'src/GenreModel.php';
 
-// Clue part 2! Getting the id back out
-
-if (isset($_GET['delete'])) {
-    $deleteId = $_GET['delete'];
-    echo $deleteId;
-
-    // Figure out how to take $deleteID and put into an SQL query to delete that specific movie
-    // SQL UPDATE query
-}
 
 $db = new PDO('mysql:host=db; dbname=movies', 'root', 'password');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-$movieModel = new MovieModel($db);
+if (isset($_GET['delete'])){
+    $id = (int)$_GET['delete'];
 
+        $stmt = $db->prepare("UPDATE `movies` SET `deleted` = 1 WHERE `id` = ?");
+        $stmt->execute([$id]);
+    }
+
+
+$movieModel = new MovieModel($db);
 $movies = $movieModel->getAllMovies();
 
-
+$movieModel = new MovieModel($db);
+$movies = $movieModel->addMovie($title, $genre, $watched, $image, $about);
 
 
 ?>
 <div class="movies-grid">
     <?php
     
-    echo MovieViewHelper::displayAllMovies($movies);
+    echo MovieViewHelper::displayAllMovies($movie);
     
 
 ?>
