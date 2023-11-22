@@ -22,6 +22,15 @@
 require_once 'src/MovieModel.php';
 require_once 'src/MovieViewHelper.php';
 
+// Clue part 2! Getting the id back out
+
+if (isset($_GET['delete'])) {
+    $deleteId = $_GET['delete'];
+    echo $deleteId;
+
+    // Figure out how to take $deleteID and put into an SQL query to delete that specific movie
+    // SQL UPDATE query
+}
 
 $db = new PDO('mysql:host=db; dbname=movies', 'root', 'password');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

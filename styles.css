@@ -1,5 +1,6 @@
 body{
-    margin: auto;
+    margin: 0;
+    padding: 0;
     background-color: rgb(211, 204, 204);
 }
 
@@ -49,6 +50,16 @@ body{
 .ullist{
  list-style-type: none;
  position: relative;
+}
+
+.button-delete{
+   background-color: rgb(181, 176, 176);
+   color: black;
+   border: none;
+   border-radius: 5px;
+   text-decoration: none;
+   margin-top: 180px;
+   padding: 6px;
 }
 
 .title{
