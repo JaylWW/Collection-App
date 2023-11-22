@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Movie</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Movies</title>
 </head>
 <body>
     <div class="homebar">
@@ -12,7 +12,7 @@
 </div>
 <div class="navbar">
         <a class="home" href="http://localhost:1234/Collection-App/">Home</a>
-        <a class="Add-title" href="http://localhost:1234/Collection-App/AddMovie.php/">Add Movie</a>
+        <a class="Add-title" href="http://localhost:1234/Collection-App/AddMovie.php">Add Movie</a>
 
 </div>
 

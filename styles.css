@@ -48,39 +48,42 @@ body{
 
 .ullist{
  list-style-type: none;
+ position: relative;
 }
 
 .title{
 font-size: x-large;
 text-align: center;
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: rgb(8, 7, 7);
 }
+
 .image img{
-    width: 250px;
+    width: 300px;
     height: 250px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     justify-content: center;
     align-content: center;
     align-items: center;
 }
+
 .genre{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /* font-style: italic; */
     text-align: center;
 }
 .watched{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /* font-style: italic; */
     margin-bottom: 10px;
     text-align: center;
 }
 .span{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: italic;
+    margin-top: 30px;
 }
 .about{
     margin-top: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 .button{
    background-color: rgb(181, 176, 176);
@@ -88,12 +91,86 @@ font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
    border: none;
    border-radius: 5px;
    text-decoration: none;
-   margin-top: 20px;
+   margin-top: 180px;
    padding: 6px;
+   position: absolute;
+   bottom: 0;
 }
 
-.ullist .button{
+.delete{
+    text-decoration: none;
+}
+
+.moviejpeg{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-between
+}
+
+.moviejpeg2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -200px;
+}
+
+.movieform{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    display: block;
+    margin-top: -250px;
+    
+}
+.addmovie{
+    height: 500px;
+    margin-top: 50px;
+    font-size: x-large;
+}
+
+#title{
+    width: 75%;
+    height: 5%;
+    border-radius: 5px;
+    font-size: x-large;
+    width: 75%;
+    height: 5%;
+    border-radius: 5px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+#genre{
+    width: 75%;
+    height: 5%;
+    border-radius: 5px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+#watched{
+    width: 75%;
+    height: 5%;
+    border-radius: 5px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+#image{
+    width: 75%;
+    height: 5%;
+    border-radius: 5px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+#about{
+    width: 75%;
+    height: 5%;
+    border-radius: 5px;
+    font-size: x-large;
+    margin-bottom: 20px;
+}
+
+.formbutton{
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: white;
 }

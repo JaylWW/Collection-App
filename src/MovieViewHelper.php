@@ -13,8 +13,8 @@ public static function displayAllMovies(array $movies): string
         $output .= "<li class='title'>$movie->title</li>";
         $output .= "<li class='genre'>$movie->genre</li>";
         $output .= "<li class='watched'>Watched: $movie->watched</li>";
-        $output .= "<li class='image'><img src='$movie->image/></li>";
-        $output .= "<li class='about'><span class='span'>About:</span> $movie->about</li>";
+        $output .= "<li class='image'><img src='$movie->image'/></li>";
+        $output .= "<li class='about'><div class='span'>About:</div> $movie->about</li>";
         $output .= "<a class='button' href='#'>Click to Find out More</a>";
         $output .= '</ul>';
     }
