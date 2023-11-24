@@ -3,11 +3,11 @@ $db = new PDO('mysql:host=db; dbname=movies', 'root', 'password');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 require_once 'src/GenreViewHelper.php';
+require_once 'src/GenreModel.php';
+require_once 'src/MovieModel.php';
 
-$query = $db->prepare('SELECT `id`, `name` FROM `genre`');
-
-        $query->execute();
-        $genres = $query->fetchAll();
+    $genreModel = new GenreModel($db);
+    $genres = $genreModel->getAllGenres();
 
         $istitlevalid = true;
         $iswatchedvalid = true;
@@ -32,18 +32,8 @@ $query = $db->prepare('SELECT `id`, `name` FROM `genre`');
             $isaboutvalid = strlen($about) >= 10;
         
             if($istitlevalid && $iswatchedvalid && $isaboutvalid){
-                $query = $db->prepare('INSERT INTO `movies`
-                (`title`, `genre_id`, `watched`, `image`, `about`)
-                VALUES (:title, :genre, :watched, :image, :about);');
-            
-            
-                $query->bindParam(':title', $title);
-                $query->bindParam(':genre', $genre);
-                $query->bindParam(':watched', $watched);
-                $query->bindParam(':image', $image);
-                $query->bindParam(':about', $about);
-            
-                $success = $query->execute();
+                $movieModel = new MovieModel($db);
+                $movies = $movieModel->addMovie($title, $genre, $watched, $image, $about);
             
                 echo "Thank you that has worked";
             }

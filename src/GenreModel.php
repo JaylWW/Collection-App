@@ -1,5 +1,7 @@
 <?php
 
+require_once 'src/Genre.php';
+
 class GenreModel
 {
     public PDO $db;
@@ -26,18 +28,6 @@ class GenreModel
         }
 
         return $genreObjs;
-    }
-}
-
-class Genre
-{
-    public $id;
-    public $name;
-
-    public function __construct($id, $name)
-    {
-        $this->id = $id;
-        $this->name = $name;
     }
 }
 ?>

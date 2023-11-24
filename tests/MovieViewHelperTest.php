@@ -9,7 +9,7 @@ class MovieViewHelperTest extends TestCase
 {
     public function test_movie_success(): void
     {
-        $movieObj = new Movies(2,'Con-Air', 'Action', 1, 'test', 'con man on a plane');
+        $movieObj = new Movie(2,'Con-Air', 'Action', 1, 'test', 'con man on a plane');
         $result = MovieViewHelper::displayAllMovies([$movieObj]);
 
         $output = '<ul class="ullist">';
